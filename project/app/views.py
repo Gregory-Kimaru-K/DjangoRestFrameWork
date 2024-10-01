@@ -5,4 +5,6 @@ from rest_framework.response import Response
 from rest_framework import status
 
 # Create your views here.
-def 
+def blog_list(request):
+    blogs = Task.objects.all()
+    return render(request, 'bloglist.html', {'blogs' : blogs})
