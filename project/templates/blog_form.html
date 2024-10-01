@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Edit {{blog.id}}</h4>
+    <form method="post" action="{% url 'update_blog' blog.id %}">
+        {% csrf_token %}
+        <input type="text" name="title" value="{{ blog.title }}"><br><br>
+        <textarea name="content" cols="30" rows="10">{{ blog.content }}</textarea><br><br>
+        <button type="submit">
+            Edit
+        </button>
+    </form>
+</body>
+</html>
